@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class ooo {
+    public static void main(String[] args) {
+
+
+        Scanner entrada = new Scanner(System.in);
+        System.out.print("digite seis numeros positivos ou negativos: ");
+        int n = 0;
+        int num;
+        for(int i=0;i<6;i++){
+
+            num = entrada.nextInt();
+            if (num>0){
+                n++;
+            }
+        }
+        System.out.println("quantidade de numeros inteiros positivos: "+n);
+
+
+
+
+    }
+}
