@@ -1,0 +1,17 @@
+Scanner entrada = new Scanner(System.in);
+
+        double soma = 0;
+        double positivos = 0;
+        double valores;
+        double media;
+        for (int i = 0; i < 6; i++) {
+            valores = entrada.nextDouble();
+            if (valores > 0) {
+                soma += valores;
+                positivos++;
+            }
+
+        }
+        media = soma / positivos;
+        System.out.println(positivos + " valores positivos");
+        System.out.println(String.format("%.1f",media));
