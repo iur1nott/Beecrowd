@@ -1,0 +1,99 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int n = entrada.nextInt();
+
+        for(int i=0;i<n;i++){
+            Pokemon pokemonDabriel = new Pokemon();
+            Pokemon pokemonGuarte = new Pokemon();
+            Treinador dabriel = new Treinador();
+            Treinador guarte = new Treinador();
+
+            int B = entrada.nextInt();
+            int B1 = B;
+            int B2 = B;
+
+            /*dabriel*/
+            int ataque1 = entrada.nextInt();
+            int defesa1 = entrada.nextInt();
+            int level1 = entrada.nextInt();
+
+            /*guarte*/
+            int ataque2 = entrada.nextInt();
+            int defesa2 = entrada.nextInt();
+            int level2 = entrada.nextInt();
+
+            pokemonDabriel.setAtaque(ataque1);
+            pokemonDabriel.setDefesa(defesa1);
+            pokemonGuarte.setAtaque(ataque2);
+            pokemonGuarte.setDefesa(defesa2);
+
+            dabriel.setLevel(level1);
+            guarte.setLevel(level2);
+
+            if (dabriel.getLevel()%2!=0){
+                B1=0;
+            }
+            if (guarte.getLevel()%2!=0){
+                B2=0;
+            }
+
+            double valorGolpe1 = ((ataque1+defesa1)/2)+B1;
+            double valorGolpe2 = ((ataque2+defesa2)/2)+B2;
+
+            String vencedor;
+
+            if(valorGolpe1>valorGolpe2){
+                vencedor = "Dabriel";
+            }else if(valorGolpe1<valorGolpe2){
+                vencedor = "Guarte";
+            }else {
+                vencedor = "Empate";
+            }
+
+            System.out.println(vencedor+"\n");
+        }
+    }
+}
+
+
+
+public class Treinador {
+    private int level;
+
+
+
+    public void setLevel(int level){
+        this.level = level;
+    }
+
+    public int getLevel(){
+        return level;
+    }
+    
+    
+    
+public class Pokemon {
+    private int ataque;
+    private int defesa;
+    private int valorGolpe;
+    private Treinador level;
+
+
+    public void setAtaque(int ataque){
+        this.ataque = ataque;
+    }
+
+    public int getAtaque(){
+        return ataque;
+    }
+
+    public void setDefesa(int defesa){
+        this.defesa = defesa;
+    }
+
+    public int getDefesa(){
+        return defesa;
+    }
