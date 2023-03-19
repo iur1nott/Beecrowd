@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int n = entrada.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            Cabo cabo1 = new Cabo();
+            Cabo cabo2 = new Cabo();
+            Conduite c1 = new Conduite();
+
+            int raio1 = entrada.nextInt();
+            int raio2 = entrada.nextInt();
+
+            cabo1.setRaio(raio1);
+            cabo2.setRaio(raio2);
+            c1.setCabo1(cabo1);
+            c1.setCabo2(cabo2);
+            System.out.println(c1.Calcularaio());
+        }
+    }
+}
+
+
+public class Cabo {
+    private int raio;
+
+    public void setRaio(int raio){
+        this.raio = raio;
+    }
+
+    public int getRaio(){
+        return raio;
+    }
+}
+
+
+public class Conduite {
+    private Cabo cabo1;
+    private Cabo cabo2;
+
+    public void setCabo1(Cabo cabo1){
+        this.cabo1 = cabo1;
+    }
+
+    public Cabo getCabo1(){
+        return cabo1;
+    }
+
+    public void setCabo2(Cabo cabo2){
+        this.cabo2 = cabo2;
+    }
+
+    public Cabo cabo2(){
+        return cabo2;
+    }
+
+    public int Calcularaio(){
+        return cabo1.getRaio()+cabo2.getRaio();
+    }
+}
