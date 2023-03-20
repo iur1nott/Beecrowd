@@ -1,0 +1,108 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        int codigo = entrada.nextInt();
+        int quantidade = entrada.nextInt();
+
+        Pedido pedido = new Pedido();
+        Produto item = new Produto(codigo);
+
+        pedido.setItem(item);
+        pedido.setQuantidade(quantidade);
+
+        System.out.printf("Total: R$ %.2f\n",pedido.CalcularValorConta());
+        entrada.close();
+
+    }
+}
+
+
+public class Produto {
+    private int codigo;
+    private String nome;
+    private double preco;
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public Produto (int codigo){
+        this.codigo = codigo;
+
+        switch (codigo) {
+            case 1:
+                this.nome = "CQ";
+                this.preco = 4.00;
+                break;
+            case 2:
+                this.nome = "XS";
+                this.preco = 4.50;
+                break;
+            case 3:
+                this.nome = "XB";
+                this.preco = 5.00;
+                break;
+            case 4:
+                this.nome = "TS";
+                this.preco = 2.00;
+                break;
+            case 5:
+                this.nome = "Re";
+                this.preco = 1.50;
+                break;
+        }
+    }
+
+}
+
+
+public class Pedido {
+    private int quantidade;
+    private Produto item;
+    
+
+    public void setItem(Produto item){
+        this.item = item;
+    }
+    public Produto getItem(){
+        return item;
+    }
+
+    public void setQuantidade(int quantidade){
+        this.quantidade = quantidade;
+    }
+    public int getQuantidade(){
+        return quantidade;
+    }
+
+    public double CalcularValorConta(){
+        return item.getPreco() * quantidade;
+    }
+
+
+}
+
+
