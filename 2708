@@ -21,10 +21,11 @@ public class Main {
                 turistas.setQuantidade(-1*quantidade);
                 jipes.setNumero(-1*quantidade);
             }
-            System.out.println();
+
 
         }
-
+        System.out.println(turistas.calculaQuantidadeTuristas());
+        System.out.println(jipes.calculaQuantidadeJipes());
 
     }
 }
@@ -36,15 +37,15 @@ public class Turistas {
     public void setQuantidade(int quantidade){
         this.quantidade = quantidade;
     }
-    public int getQuantidade(){
+    public int getQuantidade() {
         return quantidade;
-
+    }
     public int calculaQuantidadeTuristas(){
         return this.quantidade+=quantidade;
         }
 
 
-    }
+
 }
 
 
